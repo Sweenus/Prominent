@@ -19,7 +19,7 @@ public class CommandRegistry {
             .executes(ctx -> {
                 ProminentLoader.Config = ServerConfig.loadConfig();
                 
-                ctx.getSource().sendFeedback(Text.literal("Reloaded Prominent config"), false);
+                ctx.getSource().sendFeedback(() -> Text.literal("Reloaded Prominent config"), false);
 
             return -1;
             }));

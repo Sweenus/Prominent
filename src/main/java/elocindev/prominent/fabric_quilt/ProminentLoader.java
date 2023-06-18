@@ -1,10 +1,13 @@
 package elocindev.prominent.fabric_quilt;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import org.slf4j.Logger;
@@ -22,11 +25,11 @@ public class ProminentLoader implements ModInitializer {
 	
 	public static ServerEntries Config = ServerConfig.loadConfig();
 
-	public static final ItemGroup ProminentTab = FabricItemGroupBuilder.create(
-		new Identifier(MODID, "tab"))
+	public static final ItemGroup ProminentTab = FabricItemGroup.builder()
 		.icon(() -> new ItemStack(ItemRegistry.ICON))
-		.appendItems(stacks -> { stacks.add(new ItemStack(ItemRegistry.MAINMENU_DISC));})
+        .displayName(Text.translatable("itemGroup.prominent.tab"))
 		.build();
+
 
 	@Override
 	public void onInitialize() {
@@ -35,7 +38,8 @@ public class ProminentLoader implements ModInitializer {
 		LOGGER.info("Loaded Prominent Config");
 
 		SoundRegistry.registerSounds();
-		ItemRegistry.registerItems();		
+		ItemRegistry.registerItems();	
+		Registry.register(Registries.ITEM_GROUP, new Identifier(MODID, "tab"), ProminentTab);	
 		CommandRegistry.register();
 	}
 }
