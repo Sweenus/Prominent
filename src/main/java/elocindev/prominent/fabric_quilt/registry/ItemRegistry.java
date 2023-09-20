@@ -18,12 +18,13 @@ public class ItemRegistry {
     private static Item.Settings discSettings = new Item.Settings().rarity(Rarity.RARE).maxCount(1);
     public static final Item MAINMENU_DISC = reg(new MainMenuDisc(14, SoundRegistry.CONIFERUS_FOREST, discSettings, 128), "music_disc_coniferus_forest");
     
-    
+    public static final Item MOLTEN_CORE = reg(new Item(new Item.Settings().rarity(Rarity.UNCOMMON)), "molten_core");
+
+
     public static final Item ICON = reg(new Item(new Item.Settings()), "icon");
 
 
     public static Item reg(Item instance, String id) {
-        
         return Registry.register(Registries.ITEM, new Identifier(ProminentLoader.MODID, id), instance);
     }
 

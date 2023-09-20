@@ -24,7 +24,7 @@ public class ServerConfig {
                 exampleConfig.enable_debug_logging = false;
                 exampleConfig.enablePvpFactor = true;
                 exampleConfig.combatFactorPvp = 0.1f;
-                exampleConfig.enableDamageLimit = true;
+                exampleConfig.enableDamageLimit = false;
                 exampleConfig.damageLimit = 100f;
 
                 String defaultJson = BUILDER.toJson(exampleConfig);
