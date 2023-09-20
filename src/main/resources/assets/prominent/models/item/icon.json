@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-      "layer0": "prominent:other/prominent_logo"
+      "layer0": "prominent:other/skellak"
     }
 } 
