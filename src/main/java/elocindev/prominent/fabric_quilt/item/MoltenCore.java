@@ -17,7 +17,7 @@ public class MoltenCore extends Item {
     @Override
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
         tooltip.add(Text.literal("\u00A77Made from the depths of \u00A7cVaaz\u00A77 by the creator of all things, \u00A7cS'kellak\u00A77."));
-        tooltip.add(Text.literal("\u00A7Given as a reward to those who have proven themselves worthy by eliminating the threats of the realms."));
+        tooltip.add(Text.literal("\u00A77Given as a reward to those who have proven themselves worthy by eliminating the threats of the realms."));
     }
     
 }

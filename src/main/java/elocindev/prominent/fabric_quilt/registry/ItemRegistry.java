@@ -2,6 +2,7 @@ package elocindev.prominent.fabric_quilt.registry;
 
 import elocindev.prominent.fabric_quilt.ProminentLoader;
 import elocindev.prominent.fabric_quilt.item.MainMenuDisc;
+import elocindev.prominent.fabric_quilt.item.MoltenCore;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -18,7 +19,7 @@ public class ItemRegistry {
     private static Item.Settings discSettings = new Item.Settings().rarity(Rarity.RARE).maxCount(1);
     public static final Item MAINMENU_DISC = reg(new MainMenuDisc(14, SoundRegistry.CONIFERUS_FOREST, discSettings, 128), "music_disc_coniferus_forest");
     
-    public static final Item MOLTEN_CORE = reg(new Item(new Item.Settings().rarity(Rarity.UNCOMMON)), "molten_core");
+    public static final Item MOLTEN_CORE = reg(new MoltenCore(new Item.Settings().rarity(Rarity.UNCOMMON)), "molten_core");
 
 
     public static final Item ICON = reg(new Item(new Item.Settings()), "icon");
