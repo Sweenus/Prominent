@@ -27,6 +27,9 @@ public class ServerConfig {
                 exampleConfig.enableDamageLimit = false;
                 exampleConfig.damageLimit = 100f;
 
+                exampleConfig.gaiaSword_damage = 9f;
+                exampleConfig.gaiaSword_attackSpeed = -2.6f;
+
                 String defaultJson = BUILDER.toJson(exampleConfig);
                 Files.writeString(file, defaultJson);
             }

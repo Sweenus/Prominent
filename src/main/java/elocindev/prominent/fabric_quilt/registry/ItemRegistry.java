@@ -3,14 +3,16 @@ package elocindev.prominent.fabric_quilt.registry;
 import elocindev.prominent.fabric_quilt.ProminentLoader;
 import elocindev.prominent.fabric_quilt.item.MainMenuDisc;
 import elocindev.prominent.fabric_quilt.item.MoltenCore;
+import elocindev.prominent.fabric_quilt.item.artifacts.GaiaSword;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
+import net.sweenus.simplyswords.item.ModToolMaterial;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.LoggerFactory; 
 
 public class ItemRegistry {
     private static final Logger LOGGER = LoggerFactory.getLogger(ProminentLoader.MODID);
@@ -18,18 +20,22 @@ public class ItemRegistry {
     
     private static Item.Settings discSettings = new Item.Settings().rarity(Rarity.RARE).maxCount(1);
     public static final Item MAINMENU_DISC = reg(new MainMenuDisc(14, SoundRegistry.CONIFERUS_FOREST, discSettings, 128), "music_disc_coniferus_forest");
-    
+     
     public static final Item MOLTEN_CORE = reg(new MoltenCore(new Item.Settings().rarity(Rarity.UNCOMMON)), "molten_core");
-
-
     public static final Item ICON = reg(new Item(new Item.Settings()), "icon");
 
+    public static final Item GAIA_SWORD = 
+        reg(new GaiaSword(ModToolMaterial.UNIQUE, new Item.Settings().rarity(Rarity.EPIC)), "gaia_sword");
 
     public static Item reg(Item instance, String id) {
         return Registry.register(Registries.ITEM, new Identifier(ProminentLoader.MODID, id), instance);
     }
 
-    public static void registerItems() {
+    public static void registerItems() { 
         LOGGER.info("Registered Prominent Items");
+        
+
+        
+
     }
 }
